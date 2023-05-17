@@ -17,7 +17,7 @@ import java.util.NavigableMap;
 public class RefDisciplines {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "discipline_generator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "disciplineCode_generator")
     private String disciplineCode;
     @Column(name = "discipline_name")
     private String disciplineName;

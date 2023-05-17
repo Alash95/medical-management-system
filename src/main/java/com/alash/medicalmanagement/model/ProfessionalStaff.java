@@ -1,17 +1,27 @@
 package com.alash.medicalmanagement.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = )
+@Table(name = "professional_staff")
+@Setter
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class ProfessionalStaff {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "staffId_generator")
     private String staffId;
+
+    @Column(name = "staff_details")
     private String staffDetails;
+
     @ManyToOne
     @JoinColumn(name = "discipline_code")
-    private RefDisciplines disciplineCode;
+    private RefDisciplines refDisciplines;
 }

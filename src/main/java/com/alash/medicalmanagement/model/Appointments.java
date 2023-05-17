@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 public class Appointments {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "appointment_generator")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "appointmentId_generator")
     private Long appointmentId;
     @Column(name = "appointment_date")
     private LocalDateTime appointmentDate;
